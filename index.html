@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <!-- 
+  But :    Html page Index
+  Auteur : Jeremy Monney
+  Date :   05.06.2023
+  Version: 1.0
+   -->
+  
+  <!-- entête de la page -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/png" href="images/emf-info.png" />
+      <link rel= "stylesheet" href= "css/main.css" >
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      <script type="text/javascript" src="js/indexCtrl.js"></script>
+      <script type="text/javascript" src="js/viewService.js"></script>
+      <script type="text/javascript" src="js/httpService.js"></script>
+      <script type="text/javascript" src="js/chartCtrl.js"></script>
+      <script type="text/javascript" src="js/newsCtrl.js"></script>
+      <script type="text/javascript" src="js/mapCtrl.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Epilogue" rel="stylesheet">
+      <title>American Stock Informtions</title>
+   </head>
+
+   <!-- corps de la page -->
+   <body>
+      <header>
+         <div class="header-container">
+           <div>
+            <a class="link_index" id="id_home" onclick="indexCtrl.loadHome()"><h1>American Stock Informtions</h1></a>
+           </div>
+           <div class="search-bar">
+             <input id="search-bar" type="text" placeholder="Search...">
+             <button type="submit">Search</button>
+           </div>
+         </div>
+         <h2>Get reliable information about american stock markets</h2>
+       </header>
+       <nav>
+         <ul>
+            <li><button id="id_chart" class="navbtn" onclick="indexCtrl.loadChart()">Chart</button></li>
+            <li><button id="id_news" class="navbtn" onclick="indexCtrl.loadNews()">News</button></li>
+            <li><button id="id_map" class="navbtn" onclick="indexCtrl.loadMap()">Map</button></li>
+         </ul>
+       </nav>
+      <div id="container">
+          <!-- calque pour les differentes vues -->
+        <div id="view"></div>
+      </div>  <!-- fin du conteneur -->
+      <footer>
+         <p>Made by Monney Jeremy ©</p>
+       </footer>
+   </body>
+
+</html>

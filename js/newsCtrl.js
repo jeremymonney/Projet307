@@ -1,0 +1,4 @@
+class NewsCtrl {
+    constructor() {}
+  }
+  
