@@ -1,14 +1,19 @@
+/*
+  But :    Stylesheet of all html pages
+  Auteur : Jeremy Monney
+  Date :   12.06.2023
+  Version: 1.0
+*/
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
   font-family: 'Epilogue';
+  background-image: url(/images/bg_muster.jpg);
 }
 
 header {
-  background-color: #f2f2f2;
+  background-color: #dadbdb;
   padding: 20px;
 }
 
@@ -18,9 +23,17 @@ header {
   justify-content: space-between;
 }
 
-.search-bar {
+.search-bar-container {
   display: flex;
   align-items: center;
+}
+
+.search-bar{
+  height: 3vh;
+  width: 20vw;
+  background-color: #dadbdb;
+  border: none;
+  border-bottom: 2px solid black ;
 }
 
 nav {
@@ -36,10 +49,14 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
 nav ul li {
   margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .link_index{
@@ -70,6 +87,169 @@ footer {
 }
 
 .home_container{
+  margin: auto;
+  width: 50%;
+}
+
+.home_p{
+  width: 60vw;
+}
+
+.home_btn{
+  background-color: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 80px;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 242.5px);
+}
+
+.view {
+  width: 100%;
+}
+
+.home_container{
  color: black;
  height: 100%;
 }
+
+.chart_div{
+  margin: auto;
+  width: 50%;
+}
+
+.chart_div2{
+  margin: 25px;
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.chart_infos_p{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.chart_info_title{
+  margin: 0;
+  font-size: 15px;
+}
+
+.news {
+  margin: auto;
+  width: 50%;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}
+
+.news-item img {
+  width: 20%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.news-item .content {
+  width: 80%;
+}
+
+.news-item h2, p, a {
+  margin: 0;
+  font-size: 14px;
+}
+
+.detail_p{
+  margin: 20px;
+}
+
+.map_container{
+  margin: auto;
+  width: 50%;
+}
+
+.map{
+  width: 80%;
+  height: 550px;
+}
+
+/* Media Queries */
+
+/* Small screens */
+@media (max-width: 576px) {
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-right: 0;
+  }
+
+  .home_container {
+    width: 90%;
+  }
+  
+  .home_p {
+    width: 100%;
+  }
+  
+  .news {
+    width: 90%;
+  }
+
+  .chart-container{
+    width: 350px;
+  }
+
+  .chart_div2{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .news-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .news-item img {
+    width: 50%;
+  }
+  
+  .news-item .content {
+    width: 100%;
+  }
+
+  .map{
+    width: 100%;
+    height: 300px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 992px) {
+  .home_container,
+  .chart_div,
+  .news {
+    width: 70%;
+  }
+}
+
+
+
+

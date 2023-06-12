@@ -1,15 +1,11 @@
 /*
-  But :    controller
+  But :    JS controller for index paage
   Auteur : Jeremy Monney
-  Date :   05.06.2023 / V1.0
+  Date :   12.06.2023
+  Version: 1.0
 */
-
 $().ready(function () {
-  // service et indexCtrl sont des variables globales qui doivent être accessible depuis partout => pas de mot clé devant ou window.xxx
-  //http = new HttpService();
-  //http.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
-  indexCtrl = new IndexCtrl();  // ctrl principal
-  //listener pour home
+  indexCtrl = new IndexCtrl();
 });
 
 class IndexCtrl {
@@ -27,14 +23,14 @@ class IndexCtrl {
   }
 
   loadChart() {
-    this.vue.chargerVue("chart", () =>  new ChartCtrl());
+    this.vue.chargerVue("chart", () => new ChartCtrl());
   }
 
   loadNews() {
-    this.vue.chargerVue("news", () =>  new NewsCtrl());
+    this.vue.chargerVue("news", () => new NewsCtrl());
   }
 
   loadMap() {
-    this.vue.chargerVue("map", () =>  new ChartCtrl());
+    this.vue.chargerVue("map", () => new MapCtrl());
   }
 }

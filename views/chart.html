@@ -1,4 +1,35 @@
+<!-- 
+  But :    HTML Chart loading page
+  Auteur : Jeremy Monney
+  Date :   12.06.2023
+  Version: 1.0
+   -->
 <!DOCTYPE html>
-<div class ="chart_container">
-    <button>chart</button>
+<div class="chart_div">
+  <p class="detail_p">
+    Get a chart of an American company based on the symbol of the stock. Here
+    are some examples to try: AAPL, TSLA, AMZN or MSFT.
+  </p>
+  <div class="chart_div2">
+    <div class="chart_infos">
+      <h4 id="chart_symbol" class="chart_symbol"></h4>
+      <h5 class="chart_info_title">Current price</h5>
+      <p id="chart_c" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">Change</h5>
+      <p id="chart_d" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">Percent change</h5>
+      <p id="chart_dp" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">High price of the day</h5>
+      <p id="chart_h" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">Low price of the day</h5>
+      <p id="chart_l" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">Open price of the day</h5>
+      <p id="chart_o" class="chart_infos_p"></p>
+      <h5 class="chart_info_title">Previous close price</h5>
+      <p id="chart_pc" class="chart_infos_p"></p>
+    </div>
+    <div class="chart_placeholder">
+      <div id="chart-container" class="chart-container"></div>
+    </div>
+  </div>
 </div>
