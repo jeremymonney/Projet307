@@ -6,7 +6,7 @@
 */
 class HttpService {
   constructor() {}
-
+  //Error management
   centraliserErreurHttp(httpErrorCallbackFn) {
     $.ajaxSetup({
       error: function (xhr, exception) {
@@ -30,7 +30,7 @@ class HttpService {
       },
     });
   }
-
+  //Gets chart infos
   getQuote(symbol, successCallBack) {
     let url =
       "https://finnhub.io/api/v1/quote?symbol=" +
@@ -43,7 +43,7 @@ class HttpService {
       success: successCallBack,
     });
   }
-
+  //Gets data for chart
   getChartData(symbol, successCallBack) {
     let currentDate = new Date();
     let oneYearAgo = new Date();
@@ -65,14 +65,13 @@ class HttpService {
       },
     });
   }
-
+  //Gets news infos
   getNews(symbol, successCallBack) {
     let currentDate = new Date();
     let year = currentDate.getFullYear();
     let month = String(currentDate.getMonth() + 1).padStart(2, "0");
     let day = String(currentDate.getDate()).padStart(2, "0");
     let formattedDate = year + "-" + month + "-" + day;
-    console.log(formattedDate);
     let url =
       "https://finnhub.io/api/v1/company-news?symbol=" +
       symbol +

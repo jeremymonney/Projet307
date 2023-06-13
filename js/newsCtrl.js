@@ -11,7 +11,7 @@ class NewsCtrl {
 
     const searchBar = document.getElementById("search-bar");
     const self = this;
-
+    //listener on pressing ENTER
     searchBar.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         const searchVal = searchBar.value;
@@ -22,7 +22,8 @@ class NewsCtrl {
       }
     });
   }
-
+  //Shows the news in the html 
+  //data from httpservice
   showNews(symbol) {
     document.getElementById("search-bar").innerHTML = "";
     document.getElementById("newsContainer").innerHTML = "";

@@ -12,7 +12,7 @@ class ChartCtrl {
 
     const searchBar = document.getElementById("search-bar");
     const self = this;
-
+    //listener on pressing ENTER
     searchBar.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         const searchVal = searchBar.value;
@@ -24,7 +24,8 @@ class ChartCtrl {
       }
     });
   }
-
+  //Shows the chart infos in the html 
+  //data from httpservice
   showQuote(symbol) {
     this.httpServ.getQuote(symbol, (data) => {
       if (data.c === 0) {
@@ -48,7 +49,8 @@ class ChartCtrl {
       }
     });
   }
-
+  //Shows the chart in the html 
+  //data from httpservice
   showChart(symbol) {
     const chartContainer = document.getElementById("chart-container");
     // Destroy the existing chart

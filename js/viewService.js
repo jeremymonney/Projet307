@@ -6,7 +6,7 @@
 */
 class VueService {
   constructor() {}
-
+  //to load the different htmls
   chargerVue(vue, callback) {
     $("#view").load("views/" + vue + ".html", function () {
       if (typeof callback !== "undefined") {

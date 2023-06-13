@@ -9,6 +9,7 @@ class MapCtrl {
     this.initMap();
   }
 
+  //Show the map
   initMap() {
     mapboxgl.accessToken =
       "pk.eyJ1IjoibW9ubmV5ajA2IiwiYSI6ImNsaXN4ZDM3NjE5N2szZG54bGI5MTZzY3oifQ.LZ9qpMsO3zO7gD2Co_Sfiw";
@@ -19,7 +20,7 @@ class MapCtrl {
       zoom: 9,
     });
 
-    // Example locations
+    // Locations
     let locations = [
       { name: "New York Stock Exchange", coordinates: [-74.009, 40.705] },
       { name: "NASDAQ", coordinates: [-74.037, 40.7128] },

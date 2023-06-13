@@ -17,7 +17,7 @@ class IndexCtrl {
   afficherErreurHttp(msg) {
     alert(msg);
   }
-
+  //Loads the htmls
   loadHome() {
     this.vue.chargerVueSimple("home");
   }
