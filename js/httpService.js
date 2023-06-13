@@ -7,7 +7,7 @@
 class HttpService {
   constructor() {}
 
-  getQuote(symbol, successCallBack) {
+  getQuote(symbol, successCallBack, errorCallBack) {
     let url =
       "https://finnhub.io/api/v1/quote?symbol=" +
       symbol +
@@ -17,10 +17,11 @@ class HttpService {
       type: "GET",
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       success: successCallBack,
+      error: errorCallBack
     });
   }
 
-  getChartData(symbol) {
+  getChartData(symbol, successCallBack, errorCallBack) {
     let currentDate = new Date();
     let oneYearAgo = new Date();
     oneYearAgo.setFullYear(currentDate.getFullYear() - 1);
@@ -31,6 +32,8 @@ class HttpService {
     return $.ajax({
       url: "https://finnhub.io/api/v1/stock/candle",
       method: "GET",
+      success: successCallBack,
+      error: errorCallBack,
       data: {
         symbol: symbol,
         resolution: "D",
@@ -41,7 +44,7 @@ class HttpService {
     });
   }
 
-  getNews(symbol, successCallBack) {
+  getNews(symbol, successCallBack, errorCallBack) {
     let currentDate = new Date();
     let year = currentDate.getFullYear();
     let month = String(currentDate.getMonth() + 1).padStart(2, "0");
@@ -60,6 +63,7 @@ class HttpService {
       type: "GET",
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       success: successCallBack,
+      error: errorCallBack,
     });
   }
 }
