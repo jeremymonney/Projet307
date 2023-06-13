@@ -7,7 +7,31 @@
 class HttpService {
   constructor() {}
 
-  getQuote(symbol, successCallBack, errorCallBack) {
+  centraliserErreurHttp(httpErrorCallbackFn) {
+    $.ajaxSetup({
+      error: function (xhr, exception) {
+        let msg;
+        if (xhr.status === 0) {
+          msg = "Pas d'accès à la ressource serveur demandée !";
+        } else if (xhr.status === 404) {
+          msg = "Page demandée non trouvée [404] !";
+        } else if (xhr.status === 500) {
+          msg = "Erreur interne sur le serveur [500] !";
+        } else if (exception === "parsererror") {
+          msg = "Erreur de parcours dans le JSON !";
+        } else if (exception === "timeout") {
+          msg = "Erreur de délai dépassé [Time out] !";
+        } else if (exception === "abort") {
+          msg = "Requête Ajax stoppée !";
+        } else {
+          msg = "Erreur inconnue : \n" + xhr.responseText;
+        }
+        httpErrorCallbackFn(msg);
+      },
+    });
+  }
+
+  getQuote(symbol, successCallBack) {
     let url =
       "https://finnhub.io/api/v1/quote?symbol=" +
       symbol +
@@ -17,11 +41,10 @@ class HttpService {
       type: "GET",
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       success: successCallBack,
-      error: errorCallBack
     });
   }
 
-  getChartData(symbol, successCallBack, errorCallBack) {
+  getChartData(symbol, successCallBack) {
     let currentDate = new Date();
     let oneYearAgo = new Date();
     oneYearAgo.setFullYear(currentDate.getFullYear() - 1);
@@ -33,7 +56,6 @@ class HttpService {
       url: "https://finnhub.io/api/v1/stock/candle",
       method: "GET",
       success: successCallBack,
-      error: errorCallBack,
       data: {
         symbol: symbol,
         resolution: "D",
@@ -44,7 +66,7 @@ class HttpService {
     });
   }
 
-  getNews(symbol, successCallBack, errorCallBack) {
+  getNews(symbol, successCallBack) {
     let currentDate = new Date();
     let year = currentDate.getFullYear();
     let month = String(currentDate.getMonth() + 1).padStart(2, "0");
@@ -63,7 +85,6 @@ class HttpService {
       type: "GET",
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       success: successCallBack,
-      error: errorCallBack,
     });
   }
 }
