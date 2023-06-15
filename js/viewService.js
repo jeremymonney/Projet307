@@ -4,7 +4,7 @@
   Date :   12.06.2023
   Version: 1.0
 */
-class VueService {
+class ViewService {
   constructor() {}
   //to load the different htmls
   chargerVue(vue, callback) {

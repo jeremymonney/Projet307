@@ -38,7 +38,7 @@ class NewsCtrl {
 
           if (data[i].image == "") {
             const imageElement = document.createElement("img");
-            imageElement.setAttribute("src", "/images/placeholder_news.jpg");
+            imageElement.setAttribute("src", "../images/placeholder_news.jpg");
             newsDiv.appendChild(imageElement);
           } else {
             const imageElement = document.createElement("img");

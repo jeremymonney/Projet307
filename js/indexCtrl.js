@@ -10,7 +10,7 @@ $().ready(function () {
 
 class IndexCtrl {
   constructor() {
-    this.vue = new VueService();
+    this.vue = new ViewService();
     this.loadHome();
   }
 
